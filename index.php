@@ -16,14 +16,23 @@ $countries = getCountriesFromDB();
   <tbody>
   <?
   foreach($countries as $country)
-  {		echo "<tr>";
-	  echo "<td>".$country['id']."</td>";
-	  echo "<td>".$country['countryName']."</td>";
+  {		
+	  echo "<tr>";
+	  echo "<td>".htmlspecialchars($country['id'])."</td>";
+	  echo "<td>".htmlspecialchars($country['countryName'])."</td>";
 	  echo "</tr>";
   }
   ?>
-  	</tbody>
-	</table>
+  </tbody>
+</table>
+
+<form action='/action.php' method='POST'>
+  <div class='inputArea' >
+	<input placeholder='Введите название страны' pattern="^[А-ЯЁA-Z]{1}[a-zа-яё\s]+$" name='countryName' type='text' class='form-control' required>
+	<button type='submit' class='btn btn-primary'>Добавить</button>
+  </div>
+  <small class="form-text text-muted">Только латинские или кириллические символы начиная с заглавной буквы</small>
+</form>
 </div>
 
 <?
