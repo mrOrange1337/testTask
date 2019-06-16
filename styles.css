@@ -1,0 +1,17 @@
+html, body
+{
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper
+{
+    width: 60%;
+    margin: auto;
+}
+
+.table
+{
+    width: 40%!important;
+    border: 1px solid #dee2e6;
+}
